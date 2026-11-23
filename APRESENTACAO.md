@@ -7,7 +7,7 @@ Boa tarde, Dr. Jan! Tudo bem? Aqui é o Artur.
 Acompanho seu trabalho no Instagram e montei, por iniciativa minha, uma proposta de site para o senhor e para a VETTE. Reparei que o drjankleber.com.br está fora do ar, então quem procura o senhor no Google não está encontrando uma página.
 
 Dá uma olhada (abre direto no celular):
-https://euartursilva.github.io/site-dr-jankleber/
+https://euartursilva.github.io/site-dr-jankleber/#apresentacao
 
 Usei o que o senhor já mostra de melhor:
 • a frase da sua bio, "Sorrisos naturais para quem quer voltar a sorrir com confiança"

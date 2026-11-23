@@ -4,13 +4,15 @@ Site do **Dr. Jan Kleber de Vette** (CRO-BA 25340), cirurgião-dentista da VETTE
 
 Site (demonstração): https://euartursilva.github.io/site-dr-jankleber/
 
+**Modo apresentação:** https://euartursilva.github.io/site-dr-jankleber/#apresentacao — abre um tour guiado pelas seções, com explicação de cada uma para o Dr. Jan. Avança com o botão Próximo ou as setas do teclado. Quem abre o link normal não vê o tour.
+
 ## Arquivos
 
 | Arquivo | Conteúdo |
 |---|---|
 | `index.html` | A página: topo com retrato, quem sou eu, tratamentos, casos reais, como funciona, vídeos, clínica, depoimentos e contato |
 | `style.css` | Visual do site. As cores e fontes ficam no topo do arquivo (`--bone`, `--ink`, `--graphite`, `--bronze`) |
-| `app.js` | Ampliação das fotos de antes e depois (sem bibliotecas externas) |
+| `app.js` | Ampliação das fotos de antes e depois e o modo apresentação (textos do tour na lista `STEPS`) |
 | `img/` | Fotos do consultório, retratos, casos de antes e depois, capas dos vídeos e ícone (`favicon.svg`) |
 | `APRESENTACAO.md` | Texto para apresentar o site ao Dr. Jan |
 
