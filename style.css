@@ -113,8 +113,9 @@ blockquote cite{display:block;font-family:var(--body);font-style:normal;font-siz
 .case{position:relative;border:0;padding:0;background:none;cursor:zoom-in;border-radius:6px;overflow:hidden;text-align:left;font:inherit;color:inherit}
 .case img{width:100%;aspect-ratio:1;object-fit:cover;transition:transform .5s}
 .case:hover img{transform:scale(1.04)}
-.case figcaption{padding:14px 2px 0;font-size:14px;color:var(--stone)}
-.case figcaption b{display:block;color:var(--ink);font-family:var(--display);font-weight:500;font-size:19px}
+figure{margin:0}
+.cases figcaption{padding:14px 2px 0;font-size:14px;color:var(--stone)}
+.cases figcaption b{display:block;color:var(--ink);font-family:var(--display);font-weight:500;font-size:19px}
 @media (max-width:900px){.cases{grid-template-columns:1fr 1fr}}
 .note{margin-top:28px;font-size:13px;color:var(--stone);max-width:80ch}
 
@@ -233,3 +234,108 @@ body.tour .tour-panel{display:block}
 .tour-card li::before{content:"";position:absolute;left:0;top:9px;width:12px;height:2px;background:var(--bronze)}
 .tour-card .acts{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
 @media (max-width:560px){.tour-panel{padding:18px 18px 14px;bottom:10px}.tour-panel h3{font-size:22px}.tour-panel p{font-size:14px}body.tour{padding-bottom:280px}.tour-card{padding:34px 24px 28px}}
+
+
+/* ===== Mobile ===== */
+.menu-btn,.mmenu,.mbar{display:none}
+@media (max-width:900px){
+  .menu-btn{display:inline-flex;flex-direction:column;justify-content:center;gap:5px;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--paper);cursor:pointer;padding:0 13px}
+  .menu-btn i{display:block;height:1.6px;background:var(--ink);border-radius:2px;transition:transform .25s,opacity .25s}
+  .menu-btn[aria-expanded="true"] i:nth-child(1){transform:translateY(6.6px) rotate(45deg)}
+  .menu-btn[aria-expanded="true"] i:nth-child(2){opacity:0}
+  .menu-btn[aria-expanded="true"] i:nth-child(3){transform:translateY(-6.6px) rotate(-45deg)}
+  .nav .wrap{gap:10px}
+  .nav .wrap > .btn{margin-left:auto}
+  .mmenu{position:absolute;left:0;right:0;top:100%;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 18px 30px rgba(21,20,19,.1);padding:8px 24px 18px;flex-direction:column}
+  .mmenu.open{display:flex}
+  .mmenu a{padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;font-family:var(--display);font-size:22px}
+  .mmenu a:last-child{border-bottom:0}
+}
+@media (max-width:700px){
+  body{font-size:16px;padding-bottom:calc(76px + env(safe-area-inset-bottom))}
+  .wrap{padding:0 20px}
+  .nav .wrap{height:64px}
+  .nav .wrap > .btn{display:none}
+  .brand .mono{width:40px;height:40px}
+  section{padding:68px 0}
+  .head{margin-bottom:32px}
+  h2{font-size:clamp(30px,8.4vw,40px)}
+  .lead{font-size:17px}
+
+  /* hero: foto compacta primeiro, texto em seguida */
+  .hero{padding:20px 0 56px}
+  .hero .wrap{gap:26px}
+  .portrait{order:-1;max-width:none}
+  .portrait img{aspect-ratio:4/3.6;object-position:center 18%;border-radius:160px 160px 6px 6px}
+  .portrait .sig{left:12px;bottom:12px;padding:10px 14px}
+  .portrait .sig b{font-size:26px}
+  .hero h1{font-size:clamp(36px,10.4vw,46px);margin:12px 0 16px}
+  .hero .ctas{flex-direction:column;margin-top:24px}
+  .hero .ctas .btn{justify-content:center;width:100%;padding:16px}
+  .proof{gap:0;margin-top:30px;padding-top:22px;display:grid;grid-template-columns:1fr 1fr}
+  .proof strong{font-size:30px}
+  .ticker{padding:14px 0}.ticker .track{font-size:18px}
+
+  .about .wrap{gap:34px}
+  .about .pic img{aspect-ratio:16/10}
+  .about .pic .tag{position:static;display:block;max-width:none;margin-top:10px;border-radius:6px}
+  blockquote{font-size:19px}
+
+  /* carrosséis com arraste lateral */
+  .snap{display:flex!important;columns:auto!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin:0 -20px;padding:0 20px 8px;scroll-padding:0 20px;-webkit-overflow-scrolling:touch;scrollbar-width:none;border:0!important}
+  .snap::-webkit-scrollbar{display:none}
+  .snap > *{flex:0 0 82%;scroll-snap-align:start;margin:0!important}
+  .services .svc,.services .svc.feature{border:1px solid #3a3835!important;border-radius:8px;background:#262522;grid-column:auto}
+  .svc.feature h3{font-size:24px}
+  .cases > *{flex-basis:78%}
+  .videos > *{flex-basis:72%}
+  .vid .frame{aspect-ratio:9/13}
+  .reviews > *{flex-basis:84%}
+  .swipe{display:flex;align-items:center;gap:8px;margin-top:14px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--stone)}
+  .dark .swipe{color:#8f887e}
+  .swipe::after{content:"→";font-size:16px;letter-spacing:0;animation:nudge 1.6s ease-in-out infinite}
+  @keyframes nudge{50%{transform:translateX(6px)}}
+  .also{margin-top:26px}
+
+  .steps{grid-template-columns:1fr 1fr;column-gap:18px;row-gap:28px}
+  .step{padding:20px 0 0}
+  .step .k{font-size:34px}
+  .step h3{font-size:19px;margin:12px 0 6px}
+  .step p{font-size:14px}
+  .planline{margin-top:44px}
+
+  .space{grid-template-columns:1fr 1fr;grid-template-rows:220px 160px 160px;gap:10px}
+  .space figure:nth-child(1){grid-column:span 2;grid-row:auto}
+  .space figure:nth-child(4){grid-column:span 2}
+  .rating strong{font-size:68px}
+
+  .contact .info{padding:60px 20px 48px}
+  .contact .ctas .btn{flex:1 1 100%;justify-content:center}
+  .contact .photo{min-height:240px}
+  footer.site{padding:28px 0}
+
+  /* barra fixa de agendamento */
+  .wa{display:none}
+  .mbar{display:flex;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:70;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(251,250,247,.94);backdrop-filter:blur(12px);border-top:1px solid var(--line)}
+  .mbar a{display:flex;align-items:center;justify-content:center;gap:9px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;height:52px}
+  .mbar svg{width:20px;height:20px}
+  .mbar-wa{flex:1;background:#1F8F55;color:#fff}
+  .mbar-map{padding:0 18px;border:1px solid var(--ink);color:var(--ink)}
+
+  /* lightbox e tour no celular */
+  .lb img{max-width:100%;max-height:78vh}
+  body.tour .mbar{display:none}
+  body.tour{padding-bottom:200px}
+  .tour-panel{bottom:calc(8px + env(safe-area-inset-bottom));padding:14px 16px 12px;border-radius:12px}
+  .tour-panel h3{font-size:20px;margin:6px 0 4px}
+  .tour-panel p{font-size:13.5px;line-height:1.5}
+  .tour-bar{margin:10px 0}
+  .tour-nav small{display:none}
+  .tour-nav .go{width:100%}
+  .tour-nav .go button{flex:1;padding:12px}
+  .tour-card{padding:30px 22px 24px}
+  .tour-card .acts .btn{flex:1 1 100%;justify-content:center}
+}
+@media (hover:none){.case:hover img,.vid:hover img{transform:none}.btn:hover{transform:none}}
+.swipe{display:none}
+@media (max-width:700px){.swipe{display:flex}}

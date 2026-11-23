@@ -58,3 +58,18 @@
   var want=/apresentacao/.test(location.hash)||/apresentacao/.test(location.search);
   if(want){build();cover.classList.add('show');document.getElementById('tourStart').focus();}
 })();
+
+/* ===== Menu mobile e dica de arraste ===== */
+(function(){
+  var b=document.getElementById('menuBtn'),m=document.getElementById('mmenu');
+  if(b&&m){
+    function set(o){m.classList.toggle('open',o);b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Fechar menu':'Abrir menu');}
+    b.addEventListener('click',function(){set(!m.classList.contains('open'));});
+    m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){set(false);});});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+  }
+  document.querySelectorAll('.snap').forEach(function(el){
+    var h=document.createElement('p');h.className='swipe';h.setAttribute('aria-hidden','true');h.textContent='Arraste para ver mais';
+    el.parentNode.insertBefore(h,el.nextSibling);
+  });
+})();
